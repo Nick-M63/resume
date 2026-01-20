@@ -1,20 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: 150px 500px auto;
-  column-gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 10px;
   min-height: 100vh;
   box-sizing: border-box;
-}
-
-.image {
-  border: 2px solid rgb(52, 121, 199);
-}
-
-.menu {
-  border: 2px solid rgb(52, 121, 199);
-}
-
-.content {
-  border: 2px solid rgb(52, 121, 199);
 }
