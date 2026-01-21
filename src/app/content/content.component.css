@@ -1,9 +1,11 @@
 .home {
-  height: 100%;
+  height: calc(100vh - 20px);
   background: #005a61;
+  margin: 10px;
   color: white;
   padding: 40px 60px;
   box-sizing: border-box;
+  overflow: hidden;
   font-family:
     system-ui,
     -apple-system,
@@ -20,13 +22,14 @@
 
 .logo {
   color: #ffd84d;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .home-navigation {
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
 }
 
 .home-navigation a {
@@ -46,6 +49,12 @@
 }
 
 .content {
+  flex: 1;
+  display: block;
   margin-top: 80px;
+}
+
+.content > * {
   max-width: 900px;
+  margin: 0;
 }
