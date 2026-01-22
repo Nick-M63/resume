@@ -1,8 +1,6 @@
 .text {
-  box-sizing: border-box;
-  padding-top: clamp(90px, 18vh, 160px);
-  padding-left: clamp(24px, 6vw, 140px);
-  padding-right: clamp(24px, 6vw, 140px);
+  padding-top: 120px;
+  padding-left: 140px;
 }
 
 .intro {
@@ -15,7 +13,7 @@
   font-size: 96px;
   line-height: 1.05;
   margin: 10px 0 20px;
-  font-weight: 800;
+  font-weight: 650;
 }
 
 .subtitle {
@@ -24,14 +22,37 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .text {
-    padding: 0 0;
+    padding-top: 120px;
+  }
+}
+
+@media (max-height: 800px) {
+  .text {
+    padding-top: 60px;
   }
   .intro {
     font-size: 32px;
   }
   .text h1 {
-    font-size: 56px;
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text {
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+  .intro {
+    font-size: 28px;
+  }
+  .text h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  .subtitle {
+    font-size: 14px;
   }
 }
