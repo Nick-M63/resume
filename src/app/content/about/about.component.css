@@ -1,0 +1,26 @@
+.container {
+  margin: 30px 60px;
+}
+
+h1 {
+  font-size: 70px;
+  color: #ffd84d;
+  border: 1px solid red;
+}
+
+.info {
+  font-size: 18px;
+  font-style: italic;
+  color: white;
+  border: 1px solid red;
+}
+
+.info span {
+  color: #ffd84d;
+  margin: 0px 10px;
+}
+
+.story p {
+  color: white;
+  font-size: 17px;
+}
