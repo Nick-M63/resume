@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   public age: string = '63 years';
   public city: string = 'Vlaardingen';
+  public profession: string = 'Front-end Developer (Angular)';
+  public experience: string = '4+ years experience'
 }
