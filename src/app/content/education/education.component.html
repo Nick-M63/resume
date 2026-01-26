@@ -1,54 +1,23 @@
-<div class="education-box">
-  <h1 class="h1-font-education">education</h1>
-
-  <p class="info">5 years study in coding</p>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <h5>Hbo Java Developer</h5>
-      <p class="years">2017 - 2018</p>
-      <p class="school">NCOI Opleidingen - Hilversum</p>
-      <br />
-
-      <h5 id="math">Actuarial Calculator</h5>
-      <p class="years">2013 - 2015</p>
-      <p class="school">Actuarieel Genootschap - Nieuwegein</p>
+<div class="container">
+  <h1>Education</h1>
+  <div class="info">
+    <p>5+ years studying and building with code</p>
+  </div>
+  <div class="formalEducation">
+    <h3>Formal education</h3>
+    @for (study of formalEducation; track study.name) {
+      <div class="study">
+        <div class="title">{{ study.name }}</div>
+        <div class="meta">{{ study.years }} · {{ study.academy }} · {{ study.city }}</div>
+      </div>
+    }
+  </div>
+  <div class="onlineCourses">
+    <h3>Online courses</h3>
+    <div class="chips">
+      @for (course of onlineCourses; track course) {
+        <span class="chip">{{ course }}</span>
+      }
     </div>
   </div>
 </div>
-
-<h1>Education</h1>
-
-<p class="summary">5+ years studying and building with code</p>
-
-<section class="block">
-  <h2>Formal education</h2>
-
-  <div class="item">
-    <div class="title">HBO Java Developer</div>
-    <div class="meta">2017 – 2018 · NCOI Opleidingen · Hilversum</div>
-  </div>
-
-  <div class="item">
-    <div class="title">Actuarial Calculator</div>
-    <div class="meta">2013 – 2015 · Actuarieel Genootschap · Nieuwegein</div>
-  </div>
-</section>
-
-<section class="block">
-  <h2>Online courses</h2>
-
-  <div class="chips">
-    <span class="chip">Angular</span>
-    <span class="chip">TypeScript</span>
-    <span class="chip">Ionic</span>
-    <span class="chip">RxJS</span>
-    <span class="chip">NgRx</span>
-    <span class="chip">HTML/CSS</span>
-  </div>
-
-  <p class="note">
-    Ongoing self-study through online platforms (Udemy/Pluralsight/etc.) focused on modern front-end
-    development.
-  </p>
-</section>
