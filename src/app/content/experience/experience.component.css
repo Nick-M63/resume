@@ -1,6 +1,6 @@
 .container {
   margin: 30px 60px;
-  max-width: 100%;
+  max-width: 980px;
 }
 
 h1 {
@@ -71,7 +71,7 @@ h6 {
 
 @media (max-width: 1366px), (max-height: 800px) {
   .container {
-    margin: 18px 32px;
+    margin: 18px 48px;
     max-width: 900px;
   }
 
@@ -109,5 +109,34 @@ h6 {
 
   .textbox li + li {
     margin-top: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  h6 {
+    font-size: 20px;
+  }
+
+  .info {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .textbox {
+    font-size: 13px;
   }
 }

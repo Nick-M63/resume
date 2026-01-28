@@ -10,7 +10,7 @@ export class ExperienceComponent {
   TrackOnlineResponsibilities: string[] = [
     'Developing and maintaining the front-end of an Angular application',
     'Building user-friendly, responsive interfaces with a focus on usability and maintainability',
-    'Contributing to functional improvements within the TrackOnline platform',
+    'Contributing to software solutions for the TrackOnline platform in collaboration with the team',
     'Collaborating with back-end developers on data integration and performance',
   ];
 

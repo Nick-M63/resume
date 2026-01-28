@@ -26,9 +26,11 @@
   .text {
     padding-top: 80px;
   }
+
   .intro {
     font-size: 32px;
   }
+
   .text h1 {
     font-size: 72px;
   }
@@ -39,13 +41,16 @@
     padding-top: 0px;
     padding-left: 0px;
   }
+
   .intro {
     font-size: 28px;
   }
+
   .text h1 {
     font-size: 48px;
     line-height: 1.1;
   }
+
   .subtitle {
     font-size: 14px;
   }

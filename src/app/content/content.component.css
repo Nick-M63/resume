@@ -5,6 +5,8 @@
   color: white;
   padding: 40px 60px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -45,11 +47,25 @@
 
 .content {
   flex: 1;
-  display: block;
-  margin-top: 80px;
+  margin-top: 40px;
+  overflow: hidden;
 }
 
 .content > * {
   max-width: 900px;
   margin: 0;
+}
+
+@media (max-width: 1366px), (max-height: 800px) {
+  .home {
+    padding: 24px 32px;
+  }
+  .content {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .content::-webkit-scrollbar {
+    display: none;
+  }
 }
