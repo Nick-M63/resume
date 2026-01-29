@@ -1,1 +1,24 @@
-<p>contact works!</p>
+<div class="container">
+  <h1>Contact</h1>
+  <div class="contact">
+    <h6>Personalia</h6>
+    @for (contact of contactData; track contact.icon) {
+      <div class="personData">
+        <div class="icon"><i class="{{ contact.icon }}"></i></div>
+        <div class="data">
+          @if (contact.link) {
+            <a
+              [href]="contact.link"
+              [target]="contact.link.startsWith('http') ? '_blank' : null"
+              [rel]="contact.link.startsWith('http') ? 'noopener noreferrer' : null"
+            >
+              {{ contact.data }}
+            </a>
+          } @else {
+            <span>{{ contact.data }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

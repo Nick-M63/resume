@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+export interface Contact {
+  icon: string;
+  data: string;
+  link?: string;
+}
+
 @Component({
   selector: 'app-contact',
   imports: [],
@@ -7,5 +13,24 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-
+  contactData: Contact[] = [
+    { icon: 'fa-solid fa-user', data: 'Nick Mookhoek' },
+    { icon: 'fa-solid fa-location-dot', data: 'Vlaardingen' },
+    { icon: 'fa-solid fa-mobile', data: '06 - 19 78 50 44', link: 'tel:+31619785044' },
+    {
+      icon: 'fa-brands fa-linkedin',
+      data: 'linkedin.com/in/nickmookhoek',
+      link: 'https://linkedin.com/in/nickmookhoek',
+    },
+    {
+      icon: 'fa-brands fa-facebook',
+      data: 'facebook.com/nick.mookhoek',
+      link: 'https://www.facebook.com/nick.mookhoek',
+    },
+    {
+      icon: 'fa-solid fa-envelope',
+      data: 'nickmookhoek@upcmail.nl',
+      link: 'mailto:nickmookhoek@upcmail.nl',
+    },
+  ];
 }
