@@ -69,3 +69,9 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .home-navigation {
+    row-gap: 16px;
+  }
+}

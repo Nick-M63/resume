@@ -38,8 +38,8 @@
 
 @media (max-width: 768px) {
   .text {
-    padding-top: 0px;
-    padding-left: 0px;
+    padding-top: 40px;
+    padding-left: 40px;
   }
 
   .intro {

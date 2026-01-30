@@ -76,8 +76,12 @@ h3 {
   }
 
   .info {
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 }
 
@@ -87,12 +91,16 @@ h3 {
   }
 
   h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
+    font-size: clamp(32px, 6vw, 36px);
+    margin-bottom: 16px;
+  }
+
+  h6 {
+    font-size: clamp(18px, 3.5vw, 20px);
   }
 
   .info {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.4;
     margin-bottom: 16px;
   }
@@ -102,10 +110,10 @@ h3 {
   }
 
   .title {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .meta {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
