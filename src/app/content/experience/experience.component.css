@@ -69,10 +69,32 @@ h6 {
   margin-top: 6px;
 }
 
+.scroll-hint {
+  display: none;
+}
+
 @media (max-width: 1366px), (max-height: 800px) {
+  /* .container {
+    margin: 20px 48px 20px 0;
+    max-width: 900px;
+  } */
+
   .container {
     margin: 20px 48px 20px 0;
     max-width: 900px;
+    position: relative;
+  }
+
+  .scroll-hint {
+    color: #ffd84d;
+    display: block;
+    position: fixed;
+    right: 54px;
+    bottom: 20px;
+    left: auto;
+    transform: none;
+    pointer-events: none;
+    z-index: 1000;
   }
 
   h1 {

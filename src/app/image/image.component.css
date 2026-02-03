@@ -9,15 +9,13 @@
 }
 
 img {
-  width: 60%; 
+  width: 60%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   margin: auto;
-  box-shadow:
-    0 0 0 10px rgba(255, 216, 77, 0.08),
-    0 18px 50px rgba(0, 0, 0, 0.35);
-  animation: avatarIn 700ms ease-out both;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  animation: avatarIn 800ms ease-out both;
 }
 
 @keyframes avatarIn {

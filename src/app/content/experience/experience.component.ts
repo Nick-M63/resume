@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  viewChild,
+  ChangeDetectorRef,
+  inject,
+} from '@angular/core';
+import { AboutComponent } from "../about/about.component";
 
 @Component({
   selector: 'app-experience',
-  imports: [],
+  imports: [AboutComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
 })
-export class ExperienceComponent {
-  TrackOnlineResponsibilities: string[] = [
+export class ExperienceComponent implements AfterViewInit {
+  readonly #cdr = inject(ChangeDetectorRef);
+  public container = viewChild<ElementRef<HTMLElement>>('container');
+
+  public hideArrow = false;
+
+  public TrackOnlineResponsibilities: string[] = [
     'Developing and maintaining the front-end of an Angular application',
     'Building user-friendly, responsive interfaces with a focus on usability and maintainability',
     'Contributing to software solutions for the TrackOnline platform in collaboration with the team',
     'Collaborating with back-end developers on data integration and performance',
   ];
 
-  NNResponsibilities: string[] = [
+  public NNResponsibilities: string[] = [
     'Making complex actuarial calculations for life insurances and pensions;',
     'Monitoring quality through follow-up;',
     'Create Excel-calculation programs to speed up workflows;',
@@ -36,4 +49,34 @@ export class ExperienceComponent {
   //   'Telefonisch beantwoorden van vragen op actuarieel gebied van interne afdelingen',
   //   'Behandelen en afhandelen van (Ombudsman) klachten',
   // ];
+
+  ngAfterViewInit() {
+    console.log('Hide arror', this.hideArrow);
+    const host = this.container()?.nativeElement;
+    if (!host) return;
+
+    const scroller = host.closest('.content') as HTMLElement | null;
+    const el = scroller ?? host;
+
+    const update = () => {
+      console.log(
+        'scrollTop =',
+        el.scrollTop,
+        'clientHeight =',
+        el.clientHeight,
+        'scrollHeight =',
+        el.scrollHeight,
+      );
+
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+      this.hideArrow = atBottom;
+      if (el.scrollTop >= 500) {
+        this.hideArrow = true;
+        this.#cdr.detectChanges();
+      }
+    };
+
+    update();
+    el.addEventListener('scroll', update);
+  }
 }

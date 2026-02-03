@@ -1,4 +1,5 @@
-<div class="container">
+<!-- // Todo : clean up -->
+<div class="container" #container>
   <h1>Experience</h1>
 
   <div class="profession">
@@ -14,7 +15,6 @@
       }
     </ul>
   </div>
-
   <div class="profession">
     <h6>Senior Actuarial Calculator</h6>
     <div class="info">
@@ -29,4 +29,10 @@
       }
     </ul>
   </div>
+  <!-- @if (!hideArrow) {
+    <div class="scroll-hint">↓</div>
+  } @else {
+    <div>Hoi</div>
+  } -->
+  <div class="scroll-hint" [class.hide]="hideArrow">↓</div>
 </div>
