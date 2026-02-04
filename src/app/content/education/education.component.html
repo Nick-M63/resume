@@ -1,20 +1,20 @@
 <div class="container">
-  <h1>Education</h1>
+  <h1>{{ translate('education') }}</h1>
   <div class="education">
     <div class="info">
-      <p>5+ years studying and building with code</p>
+      <p>{{ translate('educationYears') }}</p>
     </div>
     <div class="formalEducation">
-      <h3>Formal education</h3>
+      <h3>{{ translate('education') }}</h3>
       @for (study of formalEducation; track study.name) {
         <div class="study">
-          <div class="title">{{ study.name }}</div>
+          <div class="title">{{ translate(study.name) }}</div>
           <div class="meta">{{ study.years }} · {{ study.academy }} · {{ study.city }}</div>
         </div>
       }
     </div>
     <div class="onlineCourses">
-      <h3>Online courses</h3>
+      <h3>{{ translate('onlineCourses') }}</h3>
       <div class="chips">
         @for (course of onlineCourses; track course) {
           <span class="chip">{{ course }}</span>

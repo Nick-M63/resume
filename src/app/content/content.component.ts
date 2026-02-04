@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
+import { Language, LanguageService } from '../services/language.service';
+import { translations } from '../translations';
 
 @Component({
   selector: 'app-content',
@@ -7,4 +9,16 @@ import { RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
   templateUrl: './content.component.html',
   styleUrl: './content.component.css',
 })
-export class ContentComponent {}
+export class ContentComponent {
+  readonly #languageService = inject(LanguageService);
+
+  language = this.#languageService.language;
+
+  translate(key: string): string {
+    return translations[this.#languageService.language()][key] ?? key;
+  }
+
+  setLanguage(language: Language) {
+    this.#languageService.setLanguage(language);
+  }
+}

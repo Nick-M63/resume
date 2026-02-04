@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { translations } from '../../translations';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomePageComponent {}
+export class HomePageComponent {
+  readonly #languageService = inject(LanguageService);
+
+  translate(key: string): string {
+    return translations[this.#languageService.language()][key] ?? key;
+  }
+}

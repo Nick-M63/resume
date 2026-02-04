@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+import { translations } from '../../translations';
 
 @Component({
   selector: 'app-education',
@@ -7,15 +9,21 @@ import { Component } from '@angular/core';
   styleUrl: './education.component.css',
 })
 export class EducationComponent {
+  readonly #languageService = inject(LanguageService);
+
+  translate(key: string): string {
+    return translations[this.#languageService.language()][key] ?? key;
+  } 
+
   formalEducation = [
     {
-      name: 'HBO Java Developer',
+      name: 'HBOJavaDeveloper',
       years: '2017 - 2018',
       academy: 'NCOI Opleidingen',
       city: 'Hilversum',
     },
     {
-      name: 'Actuarial Calculator',
+      name: 'ActuarialCalculator',
       years: '2013 - 2015',
       academy: 'Actuarieel Genootschap',
       city: 'Nieuwegein',

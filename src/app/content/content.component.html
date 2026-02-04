@@ -1,14 +1,24 @@
 <div class="container">
   <header class="header">
-    <div class="logo">Nick Mookhoek</div>
+    <div class="header-top">
+      <div class="logo">Nick Mookhoek</div>
+      <div class="settings" aria-label="Language switch">
+        <button type="button" [class.active]="language() === 'en'" (click)="setLanguage('en')">
+          EN
+        </button>
+        <button type="button" [class.active]="language() === 'nl'" (click)="setLanguage('nl')">
+          NL
+        </button>
+      </div>
+    </div>
 
     <nav class="navigation">
-      <a routerLink="home" routerLinkActive="active">Home</a>
-      <a routerLink="about" routerLinkActive="active">About me</a>
-      <a routerLink="education" routerLinkActive="active">Education</a>
-      <a routerLink="experience" routerLinkActive="active">Experience</a>
-      <a routerLink="skills" routerLinkActive="active">Skills</a>
-      <a routerLink="contact" routerLinkActive="active">Contact</a>
+      <a routerLink="home" routerLinkActive="active">{{ translate('home') }}</a>
+      <a routerLink="about" routerLinkActive="active">{{ translate('aboutMe') }}</a>
+      <a routerLink="education" routerLinkActive="active">{{ translate('education') }}</a>
+      <a routerLink="experience" routerLinkActive="active">{{ translate('experience') }}</a>
+      <a routerLink="skills" routerLinkActive="active">{{ translate('skills') }}</a>
+      <a routerLink="contact" routerLinkActive="active">{{ translate('contact') }}</a>
     </nav>
   </header>
 
