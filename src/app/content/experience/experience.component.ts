@@ -6,11 +6,9 @@ import {
   ChangeDetectorRef,
   inject,
 } from '@angular/core';
-import { AboutComponent } from "../about/about.component";
 
 @Component({
   selector: 'app-experience',
-  imports: [AboutComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css',
 })
@@ -51,7 +49,6 @@ export class ExperienceComponent implements AfterViewInit {
   // ];
 
   ngAfterViewInit() {
-    console.log('Hide arror', this.hideArrow);
     const host = this.container()?.nativeElement;
     if (!host) return;
 
@@ -59,21 +56,9 @@ export class ExperienceComponent implements AfterViewInit {
     const el = scroller ?? host;
 
     const update = () => {
-      console.log(
-        'scrollTop =',
-        el.scrollTop,
-        'clientHeight =',
-        el.clientHeight,
-        'scrollHeight =',
-        el.scrollHeight,
-      );
-
       const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
       this.hideArrow = atBottom;
-      if (el.scrollTop >= 500) {
-        this.hideArrow = true;
-        this.#cdr.detectChanges();
-      }
+      this.#cdr.detectChanges();
     };
 
     update();

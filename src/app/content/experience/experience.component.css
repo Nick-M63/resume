@@ -74,11 +74,6 @@ h6 {
 }
 
 @media (max-width: 1366px), (max-height: 800px) {
-  /* .container {
-    margin: 20px 48px 20px 0;
-    max-width: 900px;
-  } */
-
   .container {
     margin: 20px 48px 20px 0;
     max-width: 900px;
