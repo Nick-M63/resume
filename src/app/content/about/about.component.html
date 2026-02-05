@@ -1,23 +1,18 @@
 <div class="container">
-  <h1>About me</h1>
+  <h1>{{ translate('about_me') }}</h1>
   <div class="about">
     <div class="info">
-      {{ age }} <span class="divider">/</span> {{ profession }} <span class="divider">/</span>
-      {{ experience }} <span class="divider">/</span> {{ city }}
+      63&nbsp;{{ translate('years') }} <span class="divider">/</span> Front-end Developer
+      (Angular) <span class="divider">/</span> {{ translate('experience_years') }}
+      <span class="divider">/</span> Vlaardingen
     </div>
     <div class="story">
       <p>
-        With a background as a senior actuarial calculator, I made a successful transition into
-        front-end development and have worked professionally in this field for several years. I
-        enjoy combining my analytical mindset with creativity to build intuitive, well-designed user
-        interfaces.
+        {{ translate('about_me_story_1') }}
       </p>
 
       <p>
-        I like turning functional requirements into clear and practical solutions, always with
-        attention to usability and code quality. I'm naturally curious, enjoy thinking along about
-        improvements, and value collaboration. Working together with colleagues toward a shared goal
-        is where I do my best work.
+        {{ translate('about_me_story_2') }}
       </p>
     </div>
   </div>

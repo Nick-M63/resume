@@ -11,19 +11,19 @@ import { translations } from '../../translations';
 export class EducationComponent {
   readonly #languageService = inject(LanguageService);
 
-  translate(key: string): string {
+  translate(key: string): string | string[] {
     return translations[this.#languageService.language()][key] ?? key;
-  } 
+  }
 
   formalEducation = [
     {
-      name: 'HBOJavaDeveloper',
+      name: 'hbo_java_developer',
       years: '2017 - 2018',
       academy: 'NCOI Opleidingen',
       city: 'Hilversum',
     },
     {
-      name: 'ActuarialCalculator',
+      name: 'actuarial_calculator',
       years: '2013 - 2015',
       academy: 'Actuarieel Genootschap',
       city: 'Nieuwegein',

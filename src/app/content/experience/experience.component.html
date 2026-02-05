@@ -1,5 +1,5 @@
 <div class="container" #container>
-  <h1>Experience</h1>
+  <h1>{{ translate('experience') }}</h1>
 
   <div class="profession">
     <h6>Front-end Developer<span class="role-note">(Junior → Medior)</span></h6>
@@ -7,23 +7,23 @@
       2021 - 2025 <span class="divider">/</span> TrackOnline <span class="divider">/</span> Delft
     </div>
 
-    <p class="label">Responsibilities</p>
+    <p class="label">{{ translate('responsibilities') }}</p>
     <ul class="textbox">
-      @for (responsibility of TrackOnlineResponsibilities; track responsibility) {
+      @for (responsibility of translateArray('responsibilities_trackonline'); track responsibility) {
         <li>{{ responsibility }}</li>
       }
     </ul>
   </div>
   <div class="profession">
-    <h6>Senior Actuarial Calculator</h6>
+    <h6>{{ translate('senior_actuarial_calculator') }}</h6>
     <div class="info">
       2000 - 2020 <span class="divider">/</span> Nationale Nederlanden
       <span class="divider">/</span> Rotterdam
     </div>
 
-    <p class="label">Responsibilities</p>
+    <p class="label">{{ translate('responsibilities') }}</p>
     <ul class="textbox">
-      @for (responsibility of NNResponsibilities; track responsibility) {
+      @for (responsibility of translateArray('responsibilities_nn'); track responsibility) {
         <li>{{ responsibility }}</li>
       }
     </ul>

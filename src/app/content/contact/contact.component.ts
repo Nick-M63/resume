@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { translations } from '../../translations';
+import { LanguageService } from '../../services/language.service';
 
 export interface Contact {
   icon: string;
@@ -13,6 +15,8 @@ export interface Contact {
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
+  readonly #languageService = inject(LanguageService);
+
   contactData: Contact[] = [
     { icon: 'fa-solid fa-user', data: 'Nick Mookhoek' },
     { icon: 'fa-solid fa-location-dot', data: 'Vlaardingen' },
@@ -33,4 +37,8 @@ export class ContactComponent {
       link: 'mailto:nickmookhoek@upcmail.nl',
     },
   ];
+
+  translate(key: string): string | string[] {
+    return translations[this.#languageService.language()][key] ?? key;
+  }
 }

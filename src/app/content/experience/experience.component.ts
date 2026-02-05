@@ -6,6 +6,8 @@ import {
   ChangeDetectorRef,
   inject,
 } from '@angular/core';
+import { translations } from '../../translations';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-experience',
@@ -13,41 +15,12 @@ import {
   styleUrl: './experience.component.css',
 })
 export class ExperienceComponent implements AfterViewInit {
+  readonly #languageService = inject(LanguageService)
   readonly #cdr = inject(ChangeDetectorRef);
+
   public container = viewChild<ElementRef<HTMLElement>>('container');
-
   public hideArrow = false;
-
-  public TrackOnlineResponsibilities: string[] = [
-    'Developing and maintaining the front-end of an Angular application',
-    'Building user-friendly, responsive interfaces with a focus on usability and maintainability',
-    'Contributing to software solutions for the TrackOnline platform in collaboration with the team',
-    'Collaborating with back-end developers on data integration and performance',
-  ];
-
-  public NNResponsibilities: string[] = [
-    'Making complex actuarial calculations for life insurances and pensions;',
-    'Monitoring quality through follow-up;',
-    'Create Excel-calculation programs to speed up workflows;',
-    'Answering questions in the actuarial field of internal departments by telephone;',
-    'Handling and dealing with (Ombudsman) complaints;',
-  ];
-
-  // TrackOnlineResponsibilities: string[] = [
-  //   'Ontwikkelen en onderhouden van de front-end van een Angular-applicatie',
-  //   'Bouwen van gebruiksvriendelijke en responsieve interfaces met focus op gebruiksvriendelijkheid',
-  //   'Bijdragen aan functionele verbeteringen binnen TrackOnline',
-  //   'Samenwerken met back-end developers aan integratie en performance',
-  // ];
-
-  // NNResponsibilities: string[] = [
-  //   'Complexe actuariële berekeningen maken op het gebied van levensverzekeringen',
-  //   'Kwaliteit bewaken door middel van nacontrole',
-  //   "Excel-berekeningsprogramma's maken om werkstromen te versnellen",
-  //   'Telefonisch beantwoorden van vragen op actuarieel gebied van interne afdelingen',
-  //   'Behandelen en afhandelen van (Ombudsman) klachten',
-  // ];
-
+  
   ngAfterViewInit() {
     const host = this.container()?.nativeElement;
     if (!host) return;
@@ -63,5 +36,14 @@ export class ExperienceComponent implements AfterViewInit {
 
     update();
     el.addEventListener('scroll', update);
+  }
+
+  translate(key:string): string | string[] {
+    return translations[this.#languageService.language()][key] ?? key
+  }
+
+  translateArray(key: string): string[] {
+    const value = this.translate(key);
+    return Array.isArray(value) ? value : []
   }
 }

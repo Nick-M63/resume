@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+import { translations } from '../../translations';
 
 @Component({
   selector: 'app-about',
@@ -7,8 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
-  public age: string = '63 years';
-  public city: string = 'Vlaardingen';
-  public profession: string = 'Front-end Developer (Angular)';
-  public experience: string = '4+ years experience'
+  readonly #languageService = inject(LanguageService);
+
+  translate(key: string): string | string[] {
+    return translations[this.#languageService.language()][key] ?? key;
+  }
 }

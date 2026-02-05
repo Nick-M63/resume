@@ -11,7 +11,7 @@ import { LanguageService } from '../../services/language.service';
 export class HomePageComponent {
   readonly #languageService = inject(LanguageService);
 
-  translate(key: string): string {
+  translate(key: string): string | string[] {
     return translations[this.#languageService.language()][key] ?? key;
   }
 }

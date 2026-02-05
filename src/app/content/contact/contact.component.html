@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Contact</h1>
+  <h1>{{ translate('contact') }}</h1>
   <div class="contact">
-    <h6>Personalia</h6>
+    <h6>{{ translate('contact_details') }}</h6>
     @for (contact of contactData; track contact.icon) {
       <div class="personData">
         <div class="icon"><i class="{{ contact.icon }}"></i></div>

@@ -12,9 +12,9 @@ import { translations } from '../translations';
 export class ContentComponent {
   readonly #languageService = inject(LanguageService);
 
-  language = this.#languageService.language;
+  public language = this.#languageService.language;
 
-  translate(key: string): string {
+  translate(key: string): string | string[] {
     return translations[this.#languageService.language()][key] ?? key;
   }
 
