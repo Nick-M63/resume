@@ -1,3 +1,7 @@
+img {
+  display: none;
+}
+
 .text {
   padding-top: 120px;
   padding-left: 50px;
@@ -37,6 +41,17 @@
 }
 
 @media (max-width: 768px) {
+  img {
+    display: block;
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    animation: avatarIn 800ms ease-out both;
+  }
+
   .text {
     padding-top: 40px;
     padding-left: 40px;

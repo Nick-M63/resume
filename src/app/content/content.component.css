@@ -107,6 +107,10 @@
   .navigation {
     row-gap: 16px;
   }
+  .settings button {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
 }
 
 @keyframes languageFade {
