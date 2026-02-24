@@ -49,6 +49,10 @@ h6 {
   transition: width 800ms ease;
 }
 
+.scroll-hint {
+  display: none;
+}
+
 @media (max-width: 1366px), (max-height: 800px) {
   .container {
     margin: 20px 48px 20px 0;
@@ -71,6 +75,18 @@ h6 {
 
   .bar {
     height: 6px;
+  }
+
+  .scroll-hint {
+    color: #ffd84d;
+    display: block;
+    position: fixed;
+    right: 54px;
+    bottom: 20px;
+    left: auto;
+    transform: none;
+    pointer-events: none;
+    z-index: 1000;
   }
 }
 

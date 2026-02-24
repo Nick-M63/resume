@@ -1,4 +1,4 @@
-import { OnInit, Component, ChangeDetectorRef, inject } from '@angular/core';
+import { OnInit, Component, ChangeDetectorRef, inject, viewChild, ElementRef } from '@angular/core';
 import { translations } from '../../translations';
 import { LanguageService } from '../../services/language.service';
 
@@ -17,7 +17,10 @@ export interface Skill {
 export class SkillsComponent implements OnInit {
   readonly #languageService = inject(LanguageService);
   readonly #cdr = inject(ChangeDetectorRef);
-  
+
+  public container = viewChild<ElementRef<HTMLElement>>('container');
+  public hideArrow = false;
+
   skills: Skill[] = [
     { name: 'Angular', rating: 80, animatedRating: 0 },
     { name: 'HTML', rating: 85, animatedRating: 0 },
@@ -26,7 +29,7 @@ export class SkillsComponent implements OnInit {
     { name: 'Ionic', rating: 70, animatedRating: 0 },
     { name: 'RxJS', rating: 68, animatedRating: 0 },
     { name: 'Responsive Design', rating: 62, animatedRating: 0 },
-    { name: 'DevExpress', rating: 67, animatedRating: 0 }
+    { name: 'DevExpress', rating: 67, animatedRating: 0 },
   ];
 
   ngOnInit(): void {
@@ -38,7 +41,24 @@ export class SkillsComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    const host = this.container()?.nativeElement;
+    if (!host) return;
+
+    const scroller = host.closest('.content') as HTMLElement | null;
+    const el = scroller ?? host;
+
+    const update = () => {
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+      this.hideArrow = atBottom;
+      this.#cdr.detectChanges();
+    };
+
+    update();
+    el.addEventListener('scroll', update);
+  }
+
   translate(key: string): string | string[] {
-    return translations[this.#languageService.language()][key] ?? key
+    return translations[this.#languageService.language()][key] ?? key;
   }
 }
