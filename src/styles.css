@@ -12,3 +12,10 @@ body {
     BlinkMacSystemFont,
     sans-serif;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    background: #005a61;
+  }
+}

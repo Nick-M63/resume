@@ -156,6 +156,10 @@ h6 {
   .textbox {
     font-size: 13px;
   }
+
+  .scroll-hint {
+    bottom: 5px;
+  }
 }
 
 @keyframes fadeIn {
