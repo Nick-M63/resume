@@ -23,9 +23,10 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[] = [
     { name: 'Angular', rating: 80, animatedRating: 0 },
+    { name: 'JavaScript', rating: 77, animatedRating: 0 },
+    { name: 'TypeScript', rating: 75, animatedRating: 0 },
     { name: 'HTML', rating: 85, animatedRating: 0 },
     { name: 'CSS', rating: 70, animatedRating: 0 },
-    { name: 'TypeScript', rating: 75, animatedRating: 0 },
     { name: 'Ionic', rating: 70, animatedRating: 0 },
     { name: 'RxJS', rating: 68, animatedRating: 0 },
     { name: 'Responsive Design', rating: 62, animatedRating: 0 },
