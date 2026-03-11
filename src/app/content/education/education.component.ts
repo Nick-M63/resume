@@ -30,5 +30,5 @@ export class EducationComponent {
     },
   ];
 
-  onlineCourses = ['Angular', 'TypeScript', 'Ionic', 'RxJS', 'HTML', 'CSS'];
+  onlineCourses = ['Angular', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Ionic', 'RxJS'];
 }
